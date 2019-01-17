@@ -1,0 +1,255 @@
+@charset "utf-8";
+/* CSS Document */
+body, html {
+    height: 100%;
+}
+
+html {
+    color: #000;
+    background: #FFF;
+}
+
+body {
+    font-family: "Microsoft YaHei" !important;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/*头部样式*/
+.hd {
+    width: 100%;
+    height: 60px;
+    background-color: #000;
+    opacity: 0.8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+.hd .inner {
+    width: 980px;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.hd .logo {
+    float: left;
+    margin-top: 16px;
+    margin-right: 20px;
+}
+
+.hd nav {
+    float: left;
+}
+
+.hd nav li {
+    float: left;
+}
+
+.hd nav li a {
+    line-height: 60px;
+    display: block;
+    padding: 0 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.hd nav li a:hover,.hd nav li.active a {
+    background-color: #f90;
+    color: #000;
+}
+
+.section {
+    height: 100%;
+    overflow: hidden;
+}
+.section .left{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    margin-top: -200px;
+    z-index: 2;
+}
+.section .left li{
+    float: left;
+    margin-right: 20px;
+    transition: 0.5s;
+}
+.section .left li p{
+    font-size: 18px;
+    color: #333;
+    margin: 20px 0;
+
+}
+.section .left li a {
+    width: 98px;
+    height: 36px;
+    background: url("../images/buy.jpg");
+    display: block;
+}
+.section .right{
+    position: absolute;
+    right: 5%;
+    top: 15%;
+    text-align: left;
+    z-index: 2;
+}
+.section .right h1{
+    font-size: 34px;
+    color: #333;
+    font-weight: 100;
+}
+
+.section .right p{
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.section .right a{
+    color: #333;
+    text-decoration: underline;
+}
+.section .right a:hover{
+    color: #333;
+    text-decoration: none;
+}
+.section .bg{
+    position: absolute;
+    right:0;
+    bottom:0;
+    z-index: 1;
+}
+/*第一页样式*/
+.s1 {
+    background: url("../images/s1.jpg") center;
+}
+
+.s1 img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -545px;
+    margin-top: -230px;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.s1.active img{
+    opacity: 1;
+}
+.s2 {
+    background: url("../images/s2.jpg") center;
+}
+
+.s2 .left li{
+    transform: translateY(1000px);
+}
+.s2 .left li:nth-child(1){
+    transition-delay: 0.4s;
+}
+
+.s2 .left li:nth-child(2){
+    transition-delay: 0.7s;
+}
+
+.s2 .left li:nth-child(3){
+    transition-delay: 1.0s;
+}
+
+.s2.active .left li{
+    transform: translateY(0);
+}
+/*第三页样式*/
+.s3 {
+    background: url("../images/s3.jpg") center;
+}
+.s3 .left li{
+    transition-delay: 0.5s;
+}
+.s3 .left li:nth-child(1){
+    transform: translateX(0px);
+}
+.s3 .left li:nth-child(2){
+    transform: translateX(-279px);
+    opacity: 0;
+}
+.s3 .left li:nth-child(3){
+    transform: translateX(-558px);
+    opacity: 0;
+}
+.s3.active .left li{
+    transform: translateX(0);
+    opacity: 1;
+}
+/*第四页样式*/
+.s4 {
+    background: url("../images/s4.jpg") center;
+}
+/*自定义动画*/
+@-webkit-keyframes move1 {
+    0%{transform: translate(330px,-1000px);}
+    20%{transform: translate(330px,0px);}
+    40%{transform: translate(330px,-50px);}
+    60%{transform: translate(330px,0px);}
+    100%{transform: translate(0px,0px);opacity: 1;}
+
+}
+@-webkit-keyframes move2 {
+    0%{transform: translate(0px,-1000px);}
+    20%{transform: translate(0px,0px);opacity: 0;}
+    40%{transform: translate(0px,-50px);opacity: 0;}
+    60%{transform: translate(0px,0px);opacity: 0;}
+    100%{transform: translate(0px,0px);opacity: 1;}
+
+}
+@-webkit-keyframes move3 {
+    0%{transform: translate(-330px,-1000px);}
+    20%{transform: translate(-330px,0px);opacity: 0;}
+    40%{transform: translate(-330px,-50px);opacity: 0;}
+    60%{transform: translate(-330px,0px);opacity: 0;}
+    100%{transform: translate(0px,0px);opacity: 1;}
+
+}
+.s4 .left li:nth-child(1){
+    transform: translate(300px,-1000px);
+
+}
+.s4.active .left li:nth-child(1){
+    -webkit-animation:move1 2s 0.7s forwards;
+
+}
+.s4 .left li:nth-child(2){
+    transform: translate(0,-1000px);
+
+}
+.s4.active .left li:nth-child(2){
+    -webkit-animation:move2 2s 0.7s forwards;
+}
+.s4 .left li:nth-child(3){
+    transform: translate(-300px,-1000px);
+
+}
+.s4.active .left li:nth-child(3){
+    -webkit-animation:move3 2s 0.7s forwards;
+}
+/*第五页*/
+.s5{ background:url(../images/s5.jpg) center; perspective:500px;}
+.s5 .left li{ transform:translate3d(-1000px,-1000px,-500px) rotateX(145deg); }
+.s5 .left li:nth-child(1){transition-delay:0.8s;}
+.s5 .left li:nth-child(2){transition-delay:1s;}
+.s5 .left li:nth-child(3){transition-delay:1.2s;}
+
+.s5.active .left li{ transform:translate3d(0,0,0px) rotateX(0deg)}
