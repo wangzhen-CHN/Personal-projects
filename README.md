@@ -7,4 +7,4 @@
 ## 博客地址
 [进入我的博客](http://www.mo36.com/blog)
 ## 测试工具
-[json](http://www.mo36.com/tool/json)
+[json](http://www.mo36.com/code/data.json)
